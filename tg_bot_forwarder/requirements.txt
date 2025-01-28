@@ -1,0 +1,7 @@
+telethon
+configparser
+peewee
+psycopg2-binary
+sentry-sdk
+python-telegram-bot
+requests
