@@ -20,7 +20,7 @@ from app.buttons import f_userbots, f_main
 from app.docker_service import docker_build_and_run, docker_restart, docker_stop_and_remove
 from app.db import BotUser, BOT_TOKEN, create_tables, admins
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(filename='logs.log', filemode='a', level=logging.INFO)
 
 
 # ------------------------------------------------------------------------------
