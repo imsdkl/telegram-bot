@@ -2,5 +2,5 @@ aiogram==3.10.0
 Telethon==1.38.1
 peewee==3.17.8
 psycopg2-binary==2.9.10
-pydantic==2.10.6
+pydantic==2.8
 environs==9.5.0
