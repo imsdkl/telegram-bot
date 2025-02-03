@@ -12,6 +12,8 @@ DB_USER = env.str('DB_USER', '')
 DB_PASSWORD = env.str('DB_PASSWORD', '')
 DB_HOST = env.str('DB_HOST', '')
 
+admins = [int(admin) for admin in env.list('ADMINS', [])]
+
 db = PostgresqlDatabase(
     DB_NAME,
     user=DB_USER,
@@ -49,7 +51,7 @@ class BotUser(BaseModel):
     api_hash = CharField(null=True)
     twofa = CharField(null=True)
     session_string = TextField(null=True)
-    token = CharField(null=True)
+    token = TextField(null=True)
     platform = CharField(null=True)
     state = CharField(null=True)  # 'initialized', 'authorized', etc.
 

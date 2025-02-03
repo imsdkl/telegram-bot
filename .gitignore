@@ -1,0 +1,4 @@
+tg_bot_auth/.env
+tg_bot_auth/venv
+tg_bot_forwarder/.env
+tg_bot_forwarder/venv

@@ -1,7 +1,8 @@
-telethon
-configparser
-peewee
-psycopg2-binary
-sentry-sdk
-python-telegram-bot
-requests
+Telethon==1.38.1
+configparser==7.1.0
+peewee==3.17.8
+psycopg2-binary==2.9.10
+sentry-sdk==2.20.0
+python-telegram-bot==21.10
+requests==2.32.3
+environs==9.5.0

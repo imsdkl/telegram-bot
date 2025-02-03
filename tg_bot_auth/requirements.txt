@@ -1,4 +1,6 @@
-telethon
-peewee
-psycopg2-binary
-python-telegram-bot
+aiogram==3.10.0
+Telethon==1.38.1
+peewee==3.17.8
+psycopg2-binary==2.9.10
+pydantic==2.10.6
+environs==9.5.0
