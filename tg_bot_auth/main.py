@@ -390,7 +390,10 @@ async def message_handler(message: Message, state: FSMContext):
             BotUser.ensure_connection()
             users = BotUser.select()
             BotUser.close_connection()
-            await message.answer("All userbots:", reply_markup=f_userbots(users))
+            if users:
+                await message.answer("All userbots:", reply_markup=f_userbots(users))
+            else:
+                await message.answer("Userbots not found! :(")
         elif msg == "Create userbot":
             await message.answer("Привет! Введите номер телефона (пример: +71234567890).")
             await state.set_state(RegisterStates.PHONE)
