@@ -21,8 +21,6 @@ API_ID = user.api_id
 API_HASH = user.api_hash
 phone_number = user.number
 
-BotUser.close_connection()
-
 set_tag("phone_number", phone_number)
 
 if phone_number is None or chat_card_xabar_id == 0 or chat_humo_id == 0 or session_string is None:
