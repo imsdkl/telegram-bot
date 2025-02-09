@@ -32,15 +32,20 @@ if phone_number is None or chat_card_xabar_id == 0 or chat_humo_id == 0 or sessi
 
 client = TelegramClient(StringSession(session_string), API_ID, API_HASH)
 
+user_data = {}
+
 
 @client.on(events.NewMessage(incoming=True, chats=[chat_card_xabar_id, chat_humo_id]))
 async def normal_handler(event):
     message = event.message.to_dict()['message']
     telegram_id = event.message.to_dict()['from_id']
-    BotUser.ensure_connection()
-    user.telegram_id = telegram_id
-    user.save()
-    BotUser.close_connection()
+    print("telegram_id:", telegram_id)
+    user_data["telegram_id"] = telegram_id
+    if user.telegram_id is None:
+        BotUser.ensure_connection()
+        user.telegram_id = telegram_id
+        user.save()
+        BotUser.close_connection()
 
     data = {"from": user.platform, "content": message}
 
