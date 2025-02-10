@@ -38,10 +38,11 @@ user_data = {}
 @client.on(events.NewMessage(incoming=True, chats=[chat_card_xabar_id, chat_humo_id]))
 async def normal_handler(event):
     message = event.message.to_dict()['message']
-    telegram_id = event.message.to_dict()['from_id']
-    print("telegram_id:", telegram_id)
-    user_data["telegram_id"] = telegram_id
     if user.telegram_id is None:
+        me = await client.get_me()
+        telegram_id = me.id
+        print("telegram_id:", telegram_id)
+        user_data["telegram_id"] = telegram_id
         BotUser.ensure_connection()
         user.telegram_id = telegram_id
         user.save()
